@@ -1,6 +1,7 @@
 // Mobile Menu Toggle
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const authButtons = document.querySelector('.auth-buttons');
 
 if (menuBtn && navLinks) {
     // Set initial state based on screen size
@@ -9,18 +10,34 @@ if (menuBtn && navLinks) {
     }
     
     menuBtn.addEventListener('click', () => {
-        const isVisible = navLinks.style.display === 'flex';
-        navLinks.style.display = isVisible ? 'none' : 'flex';
+        navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
+        if (authButtons) {
+            authButtons.classList.toggle('active');
+        }
     });
     
     // Close mobile menu when window is resized above mobile breakpoint
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
-            navLinks.style.display = '';
+            navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
-        } else if (navLinks.style.display === '') {
-            navLinks.style.display = 'none';
+            if (authButtons) {
+                authButtons.classList.remove('active');
+            }
+        }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !e.target.closest('.navbar') && 
+            navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active');
+            if (authButtons) {
+                authButtons.classList.remove('active');
+            }
         }
     });
 }
@@ -37,8 +54,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             // Close mobile menu if open
             if (window.innerWidth <= 768) {
-                navLinks.style.display = 'none';
+                navLinks.classList.remove('active');
                 menuBtn.classList.remove('active');
+                if (authButtons) {
+                    authButtons.classList.remove('active');
+                }
             }
         }
     });

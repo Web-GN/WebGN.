@@ -556,15 +556,72 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Navigation mobile styles */
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--nav-bg);
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
     }
-
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        margin: 0;
+        padding: 1rem 5%;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .pricing-btn {
+        margin: 10px 5% !important;
+    }
+    
+    .auth-buttons {
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        margin: 0;
+        padding: 0.5rem 5%;
+        justify-content: center;
+        background: var(--nav-bg);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+    }
+    
+    .auth-buttons.active {
+        display: flex;
+    }
+    
     .menu-btn {
         display: block;
         cursor: pointer;
+        z-index: 1001;
+        margin-left: auto;
+        margin-right: 15px;
     }
-
+    
     .menu-btn .bar {
         width: 25px;
         height: 3px;
@@ -572,11 +629,29 @@ footer {
         margin: 5px 0;
         transition: var(--transition);
     }
+    
+    .menu-btn.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .menu-btn.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-btn.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .theme-toggle {
+        margin-left: auto;
+    }
 
+    /* Hero section mobile styles */
     .hero {
         flex-direction: column;
         text-align: center;
         padding: 3rem 1rem;
+        margin-top: 60px;
     }
 
     .hero-content {
@@ -621,6 +696,109 @@ footer {
     
     .footer-section {
         text-align: center;
+    }
+
+    /* Additional mobile responsive fixes */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-message {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .contact-email {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Modal fixes for mobile */
+    .modal-content {
+        width: 95%;
+        max-width: 400px;
+        padding: 1.5rem;
+    }
+    
+    .auth-form {
+        padding: 1rem;
+    }
+    
+    .form-group input,
+    .auth-form .submit-btn {
+        padding: 0.8rem 1rem;
+    }
+    
+    /* Fix for long content overflow */
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Prevent navbar from wrapping */
+    .navbar {
+        flex-wrap: nowrap;
+    }
+    
+    .logo span {
+        font-size: 1.4rem;
+    }
+    
+    /* Adjust padding for mobile */
+    .contact, .services, .portfolio {
+        padding: 5rem 5% 3rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .logo i {
+        height: 36px;
+        width: 36px;
+        font-size: 1.2rem;
+    }
+    
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    .navbar {
+        padding: 0.8rem 4%;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .contact-email {
+        font-size: 1rem !important;
+    }
+    
+    .modal-content {
+        width: 90%;
     }
 }
 
