@@ -512,6 +512,25 @@ footer {
     font-size: 1.1rem;
 }
 
+/* Venmo payment styles */
+.venmo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.venmo-container i {
+    font-size: 1.8rem;
+    color: #3D95CE;
+    margin-right: 10px;
+}
+
+.venmo-id {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Footer bottom styles */
 .footer-bottom {
     padding-top: 2rem;
     text-align: center;
@@ -697,6 +716,11 @@ footer {
     .footer-section {
         text-align: center;
     }
+    
+    .venmo-container {
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
 
     /* Additional mobile responsive fixes */
     body {
@@ -799,6 +823,10 @@ footer {
     
     .modal-content {
         width: 90%;
+    }
+    
+    .venmo-container i {
+        font-size: 1.5rem;
     }
 }
 
@@ -1367,4 +1395,12 @@ footer {
 /* Dark mode adjustments for success message */
 [data-theme="dark"] .success-message {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .venmo-container i {
+    color: #3D95CE;
+}
+
+[data-theme="dark"] .venmo-id {
+    color: var(--primary-color);
 } 
