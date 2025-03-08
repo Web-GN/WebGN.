@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGN - Professional Web Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <span>WebGN</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="pricing.html" class="pricing-btn">Pricing</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <button id="login-btn" class="auth-btn login-btn">Login</button>
+            <button id="signup-btn" class="auth-btn signup-btn">Sign Up</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Crafting Digital Excellence for Your Business</h1>
+            <p>Professional websites that drive growth for small and medium businesses</p>
+            <a href="pricing.html"><button class="cta-button">Get Started</button></a>
+        </div>
+        <div class="hero-image">
+            <div class="geometric-shape"></div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Design</h3>
+                <p>Custom-designed websites that reflect your brand identity</p>
+            </div>
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-heart"></i>
+                <h3>Customer Satisfaction</h3>
+                <p>Customer satisfaction is our top priority</p>
+            </div>
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-chart-line"></i>
+                <h3>Possible Sales Boost</h3>
+                <p>Boost your online visibility and reach more customers</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-message">
+                <p>To purchase our products or inquire about our services, please email us at:</p>
+                <p class="contact-email"><i class="fas fa-envelope"></i> WebGN.contact@gmail.com</p>
+                <p>We'll respond to your inquiry as soon as possible.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-code"></i> WebGN</h3>
+                <p>Creating digital success stories for businesses like yours.</p>
+                <p>We specialize in developing responsive, modern websites that help businesses reach their full potential online.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: WebGN.contact@gmail.com</p>
+                <p>Hours: Monday - Friday, 9am - 5pm CT</p>
+                <p>Weekends: 9am - 8pm CT</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebGN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Login</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+                <p class="form-switch">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signup-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Create Account</span>
+                    <i class="fas fa-user-plus"></i>
+                </button>
+                <p class="form-switch">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
