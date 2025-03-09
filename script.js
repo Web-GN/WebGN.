@@ -4,14 +4,17 @@ const navLinks = document.querySelector('.nav-links');
 const authButtons = document.querySelector('.auth-buttons');
 
 if (menuBtn && navLinks) {
-    // Set initial state based on screen size
-    if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-    }
+    // We don't need to set initial state anymore as we're using CSS classes
     
     menuBtn.addEventListener('click', () => {
+        console.log('Menu button clicked');
         navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
+        
+        // Log the state for debugging
+        console.log('Nav links active:', navLinks.classList.contains('active'));
+        console.log('Menu button active:', menuBtn.classList.contains('active'));
+        
         if (authButtons) {
             authButtons.classList.toggle('active');
         }
