@@ -351,6 +351,29 @@ const initAuthModals = () => {
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
         
+        // Check if the account exists
+        if (!checkEmailExists(email)) {
+            const emailInput = document.getElementById('login-email');
+            emailInput.classList.add('invalid');
+            emailInput.focus();
+            
+            // Shake effect for error
+            const formGroup = emailInput.parentElement;
+            formGroup.classList.add('shake');
+            
+            // Create error message
+            let errorMsg = formGroup.querySelector('.form-error');
+            if (!errorMsg) {
+                errorMsg = document.createElement('div');
+                errorMsg.className = 'form-error';
+                formGroup.appendChild(errorMsg);
+            }
+            errorMsg.textContent = 'No account found with this email. Please sign up first.';
+            
+            setTimeout(() => formGroup.classList.remove('shake'), 600);
+            return;
+        }
+        
         // Here you would typically send a request to your authentication server
         // For demonstration, we'll simulate a successful login
         
