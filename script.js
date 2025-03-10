@@ -260,16 +260,61 @@ const initAuthModals = () => {
         }, 400);
     };
     
-    const closeModal = (modal) => {
-        const modalContent = modal.querySelector('.modal-content');
-        if (modalContent) {
-            modalContent.style.transform = 'translateY(20px)';
-        }
+    // Create particle effect when closing modal
+    const createModalCloseEffect = (modal) => {
+        const rect = modal.querySelector('.modal-content').getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
         
+        // Create particles
+        for (let i = 0; i < 12; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'modal-particle';
+            
+            // Random position within the modal
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 20 + Math.random() * 80;
+            const x = centerX + Math.cos(angle) * distance;
+            const y = centerY + Math.sin(angle) * distance;
+            
+            // Set random destination for animation
+            const randomX = (Math.random() - 0.5) * 200;
+            const randomY = (Math.random() - 0.5) * 200;
+            
+            // Set styles
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            particle.style.backgroundColor = `hsl(191, 100%, ${50 + Math.random() * 40}%)`;
+            particle.style.transform = `scale(${0.4 + Math.random() * 0.6})`;
+            particle.style.setProperty('--random-x', `${randomX}px`);
+            particle.style.setProperty('--random-y', `${randomY}px`);
+            particle.style.animationDuration = `${0.6 + Math.random() * 0.8}s`;
+            particle.style.animationDelay = `${Math.random() * 0.2}s`;
+            
+            document.body.appendChild(particle);
+            
+            // Remove particles after animation
+            setTimeout(() => {
+                if (document.body.contains(particle)) {
+                    document.body.removeChild(particle);
+                }
+            }, 1500);
+        }
+    };
+
+    const closeModal = (modal) => {
+        // Create particle effect
+        createModalCloseEffect(modal);
+        
+        // Add the closing animation class
+        modal.classList.add('closing');
+        
+        // Wait for the animation to complete before hiding the modal
         setTimeout(() => {
             modal.classList.remove('show');
+            modal.classList.remove('closing');
             document.body.style.overflow = ''; // Restore scrolling
-        }, 200);
+        }, 500);
     };
     
     const closeAllModals = () => {
