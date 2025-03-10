@@ -920,11 +920,18 @@ footer {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .modal.show {
     display: flex;
-    animation: fadeIn 0.4s ease;
+    opacity: 1;
+}
+
+.modal.closing {
+    opacity: 0;
+    backdrop-filter: blur(0px);
 }
 
 .modal-content {
@@ -936,13 +943,39 @@ footer {
     max-width: 450px;
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    transform: translateY(0);
-    transition: transform 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), 
+                opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 0.5s ease;
     background-image: 
         radial-gradient(circle at 100% 0%, rgba(0, 180, 216, 0.1) 20%, transparent 60%),
         radial-gradient(circle at 0% 100%, rgba(0, 180, 216, 0.05) 30%, transparent 70%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+    animation: modalIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.modal.closing .modal-content {
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: modalOut 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes modalIn {
+    0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes modalOut {
+    0% { transform: scale(1) translateY(0); opacity: 1; }
+    100% { transform: scale(0.95) translateY(20px); opacity: 0; }
 }
 
 /* Background elements for visual appeal */
@@ -970,11 +1003,6 @@ footer {
     z-index: -1;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .close-modal {
     position: absolute;
     top: 12px;
@@ -983,7 +1011,7 @@ footer {
     font-weight: bold;
     color: var(--light-text);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 50px;
     width: 50px;
     display: flex;
@@ -994,12 +1022,20 @@ footer {
     padding: 20px;
     flex-shrink: 0;
     z-index: 10;
+    opacity: 0.7;
 }
 
 .close-modal:hover {
-    color: var(--text-color);
+    color: var(--primary-color);
     background-color: rgba(0, 0, 0, 0.08);
-    transform: rotate(90deg) scale(1.1);
+    transform: rotate(90deg) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
+}
+
+.close-modal:active {
+    transform: rotate(90deg) scale(0.9);
+    transition-duration: 0.1s;
 }
 
 .modal h2 {
@@ -1483,4 +1519,27 @@ footer {
 @keyframes slideOut {
     from { transform: translateX(0); }
     to { transform: translateX(150%); }
+}
+
+/* Modal Particle Effect */
+.modal-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    pointer-events: none;
+    z-index: 1010;
+    animation: particleAnimation 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translate(var(--random-x, 100px), var(--random-y, 100px));
+    }
 } 
