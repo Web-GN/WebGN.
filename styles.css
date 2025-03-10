@@ -110,6 +110,7 @@ body {
                 color 0.3s ease,
                 background-color 0.3s ease;
     background-color: rgba(0, 180, 216, 0.1);
+    animation: spin-logo 8s infinite linear;
 }
 
 .logo i::before {
@@ -126,6 +127,7 @@ body {
     transform: scale(1.1) rotate(10deg);
     color: #0090af;
     background-color: rgba(0, 180, 216, 0.2);
+    animation-play-state: paused;
 }
 
 .logo span {
@@ -577,6 +579,15 @@ footer {
     }
     100% {
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+
+@keyframes spin-logo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -1420,4 +1431,56 @@ footer {
 
 [data-theme="dark"] .venmo-id {
     color: var(--primary-color);
+}
+
+/* Notification System */
+.notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 16px 24px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(150%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 9999;
+    max-width: 350px;
+    border: 1px solid var(--border-color);
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification i {
+    font-size: 20px;
+}
+
+.notification.success {
+    border-left: 4px solid #10b981;
+}
+
+.notification.error {
+    border-left: 4px solid #ef4444;
+}
+
+.notification.info {
+    border-left: 4px solid var(--primary-color);
+}
+
+@keyframes slideIn {
+    from { transform: translateX(150%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(150%); }
 } 
