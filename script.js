@@ -408,6 +408,9 @@ const initAuthModals = () => {
             setTimeout(() => {
                 updateAuthUI();
                 
+                // Show success notification
+                showNotification('Successfully logged in! Welcome back.', 'success');
+                
                 // Close modal with success animation
                 const modalContent = loginModal.querySelector('.modal-content');
                 if (modalContent) {
@@ -528,6 +531,9 @@ const initAuthModals = () => {
             setTimeout(() => {
                 updateAuthUI();
                 
+                // Show success notification
+                showNotification(`Account created successfully! Welcome, ${name}.`, 'success');
+                
                 // Close modal with success animation
                 const modalContent = signupModal.querySelector('.modal-content');
                 if (modalContent) {
@@ -580,7 +586,7 @@ const updateAuthUI = () => {
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('user');
             updateAuthUI();
-            alert('Logged out successfully!');
+            showNotification('You have been successfully logged out.', 'info');
         });
     } else {
         // User is not logged in, show login and signup buttons
@@ -693,6 +699,40 @@ function checkForFormSuccess() {
                        window.location.hash;
         window.history.replaceState({path: newUrl}, '', newUrl);
     }
+}
+
+// Display notification function
+function showNotification(message, type = 'success') {
+    // Remove any existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    
+    // Add icon based on type
+    let icon = 'check-circle';
+    if (type === 'error') icon = 'exclamation-circle';
+    if (type === 'info') icon = 'info-circle';
+    
+    notification.innerHTML = `
+        <i class="fas fa-${icon}"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => notification.classList.add('show'), 10);
+    
+    // Hide and remove notification after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
 }
 
 // Run initialization when page loads
