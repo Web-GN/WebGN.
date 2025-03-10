@@ -1,203 +1,359 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & About - WebGN</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzAwYjRkOCIgZD0iTTggMTZsLTQtNCA0LTRoMmwtNCA0IDQgNEg4em02IDBsNC00LTQtNGgtMmw0IDQtNCA0aDJ6Ii8+PC9zdmc+">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="pricing-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <a href="index.html" class="logo-link">
-            <div class="logo">
-                <i class="fas fa-code"></i>
-                <span>WebGN</span>
-            </div>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="pricing.html" class="pricing-btn">Pricing</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-        </button>
-        <div class="menu-btn">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <div class="auth-buttons">
-            <button id="login-btn" class="auth-btn login-btn">Login</button>
-            <button id="signup-btn" class="auth-btn signup-btn">Sign Up</button>
-        </div>
-    </nav>
+/* About Section */
+.about-section {
+    padding: 10rem 5% 5rem;
+    background: var(--accent-bg);
+}
 
-    <section class="about-section">
-        <div class="about-content">
-            <h1>About WebGN</h1>
-            <p class="about-text">WebGN is a forward-thinking web development agency dedicated to helping small and medium-sized businesses thrive in the digital world. With our expertise in modern web technologies and design principles, we create websites that not only look stunning but also drive real business results.</p>
-            
-            <div class="about-features">
-                <div class="feature">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick turnaround times without compromising quality</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-users"></i>
-                    <h3>Experienced Team</h3>
-                    <p>Dedicated professionals with extensive industry knowledge</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-headset"></i>
-                    <h3>Reliable Support</h3>
-                    <p>Consistent assistance when you need it most</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    <section class="pricing-section">
-        <h2>Price Plans</h2>
-        <p class="pricing-subtitle">Choose the perfect plan for your business needs</p>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card featured">
-                <div class="pricing-header">
-                    <h3>Professional</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">24.99</span>
-                        <span class="period">/Monthly</span>
-                    </div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> 3 Page Website</li>
-                    <li><i class="fas fa-check"></i> Priority Email Support</li>
-                    <li><i class="fas fa-check"></i> Advanced Animation</li>
-                    <li><i class="fas fa-check"></i> Standard User Interface</li>
-                    <li><i class="fas fa-check"></i> Standard Features</li>
-                    <li><i class="fas fa-check"></i> Limited Changes</li>
-                    <li><i class="fas fa-check"></i>Custom Domain</li>
-                </ul>
-                <a href="index.html#contact"><button class="pricing-cta">Buy Now</button></a>
-            </div>
+.about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
 
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3>Enterprise</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">49.99</span>
-                        <span class="period">/Monthly</span>
-                    </div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> Unlimited Pages</li>
-                    <li><i class="fas fa-check"></i> Custom Design</li>
-                    <li><i class="fas fa-check"></i>Premium User Interface</li>
-                    <li><i class="fas fa-check"></i> Premium Animation</li>
-                    <li><i class="fas fa-check"></i> Custom Features</li>
-                    <li><i class="fas fa-check"></i> Make Changes Anytime</li>
-                    <li><i class="fas fa-check"></i> Priority Email Support</li>
-                    <li><i class="fas fa-check"></i>Custom Domain</li>
-                </ul>
-                <a href="index.html#contact"><button class="pricing-cta">Buy Now</button></a>
-            </div>
-        </div>
-    </section>
+.about-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>WebGN</h3>
-                <p>Creating digital success stories for businesses like yours.</p>
-                <p>We specialize in developing responsive, modern websites that help businesses reach their full potential online.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: WebGN.contact@gmail.com</p>
-                <p>Hours: Monday - Friday, 9am - 5pm CT</p>
-                <p>Weekends: 9am - 8pm CT</p>
-            </div>
-            <div class="footer-section">
-                <h3>Payment</h3>
-                <div class="venmo-container">
-                    <i class="fab fa-venmo"></i>
-                    <p>Pay with Venmo: <span class="venmo-id">@WebGN</span></p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 WebGN. All rights reserved.</p>
-        </div>
-    </footer>
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-    <!-- Login Modal -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form" class="auth-form">
-                <div class="form-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="login-email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="login-password" placeholder="Password" required>
-                </div>
-                <div class="form-options">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <span>Login</span>
-                    <i class="fas fa-sign-in-alt"></i>
-                </button>
-                <p class="form-switch">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
-            </form>
-        </div>
-    </div>
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
 
-    <!-- Signup Modal -->
-    <div id="signup-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Create Account</h2>
-            <form id="signup-form" class="auth-form">
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" id="signup-name" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="signup-email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="signup-password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <span>Create Account</span>
-                    <i class="fas fa-user-plus"></i>
-                </button>
-                <p class="form-switch">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
-            </form>
-        </div>
-    </div>
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
 
-    <script src="script.js"></script>
-</body>
-</html> 
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.feature h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.feature p {
+    color: var(--light-text);
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 5%;
+    background: var(--background);
+}
+
+.pricing-section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0090af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.pricing-subtitle {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.pricing-grid {
+    display: flex;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    justify-content: center;
+}
+
+.pricing-card {
+    background: var(--card-bg);
+    border-radius: 30px;
+    padding: 45px 30px;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 650px;
+    transform: none;
+    width: 100%;
+    max-width: 450px;
+}
+
+.pricing-card.featured {
+    background: linear-gradient(180deg, var(--card-bg) 0%, var(--accent-bg) 100%);
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 180, 216, 0.2);
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 144, 175, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 180, 216, 0.3);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.pricing-header h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.currency {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.pricing-features li {
+    margin: 15px 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0090af 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.pricing-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+}
+
+.pricing-cta:hover::before {
+    left: 100%;
+}
+
+.featured .pricing-cta {
+    background: linear-gradient(135deg, #0090af 0%, var(--primary-color) 100%);
+    box-shadow: 0 8px 16px rgba(0, 180, 216, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .pricing-grid {
+        flex-direction: column;
+        max-width: 500px;
+        gap: 40px;
+    }
+
+    .pricing-card {
+        margin: 0 auto;
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 8rem 5% 4rem;
+    }
+
+    .about-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .feature {
+        padding: 1.5rem;
+    }
+    
+    .feature i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .pricing-section {
+        padding: 4rem 5%;
+    }
+    
+    .pricing-section h2 {
+        font-size: 2rem;
+    }
+    
+    .pricing-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .pricing-grid {
+        padding: 20px;
+        gap: 40px;
+        max-width: 400px;
+    }
+
+    .pricing-card {
+        min-height: 550px;
+        padding: 35px 25px;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1.02);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .about-section {
+        padding: 6rem 4% 3rem;
+    }
+    
+    .about-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature i {
+        font-size: 1.8rem;
+    }
+    
+    .pricing-section {
+        padding: 60px 4%;
+    }
+    
+    .pricing-grid {
+        padding: 15px;
+        gap: 30px;
+        max-width: 320px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+        min-height: 500px;
+    }
+    
+    .pricing-card.featured {
+        min-height: 520px;
+    }
+    
+    .amount {
+        font-size: 2.8rem;
+    }
+    
+    .pricing-features li {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
+
+/* Navigation Pricing Button Highlight */
+.nav-links .pricing-btn {
+    color: var(--primary-color);
+    font-weight: 600;
+} 
