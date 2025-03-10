@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing & About - WebGN</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzAwYjRkOCIgZD0iTTggMTZsLTQtNCA0LTRoMmwtNCA0IDQgNEg4em02IDBsNC00LTQtNGgtMmw0IDQtNCA0aDJ6Ii8+PC9zdmc+">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pricing-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -29,6 +30,10 @@
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
+        </div>
+        <div class="auth-buttons">
+            <button id="login-btn" class="auth-btn login-btn">Login</button>
+            <button id="signup-btn" class="auth-btn signup-btn">Sign Up</button>
         </div>
     </nav>
 
@@ -77,6 +82,7 @@
                     <li><i class="fas fa-check"></i> Advanced Animation</li>
                     <li><i class="fas fa-check"></i> Standard User Interface</li>
                     <li><i class="fas fa-check"></i> Standard Features</li>
+                    <li><i class="fas fa-check"></i> Limited Changes</li>
                     <li><i class="fas fa-check"></i>Custom Domain</li>
                 </ul>
                 <a href="index.html#contact"><button class="pricing-cta">Buy Now</button></a>
@@ -132,6 +138,66 @@
         </div>
     </footer>
 
-    <script src="pricing.js"></script>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Login</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+                <p class="form-switch">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signup-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Create Account</span>
+                    <i class="fas fa-user-plus"></i>
+                </button>
+                <p class="form-switch">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
