@@ -105,8 +105,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
     <!-- Login Modal -->
     <div id="login-modal" class="modal">
         <div class="modal-content">
@@ -166,5 +164,40 @@
             </form>
         </div>
     </div>
+    
+    <!-- AI Assistant Chat Widget -->
+    <div class="ai-assistant-container">
+        <div class="ai-chat-widget" id="ai-chat-widget">
+            <div class="ai-chat-header">
+                <div class="ai-chat-title">
+                    <i class="fas fa-robot"></i>
+                    <span>WebGN Assistant</span>
+                </div>
+                <div class="ai-chat-controls">
+                    <button class="ai-chat-minimize"><i class="fas fa-minus"></i></button>
+                    <button class="ai-chat-close"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="ai-chat-messages" id="ai-chat-messages">
+                <div class="ai-message">
+                    <div class="ai-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="ai-message-content">
+                        <p>Hi there! 👋 I'm your WebGN Assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-chat-input">
+                <input type="text" id="ai-user-input" placeholder="Type your message here...">
+                <button id="ai-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="ai-assistant-button" id="ai-assistant-toggle">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
